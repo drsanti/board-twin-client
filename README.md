@@ -15,8 +15,12 @@ From GitHub (no npm publish yet — `dist/` is committed, no build needed):
 ```bash
 npm install drsanti/board-twin-client
 # pin a release:
-npm install drsanti/board-twin-client#v0.1.0
+npm install drsanti/board-twin-client#v0.2.0
 ```
+
+**Starter app:** [`examples/starter/`](examples/starter/) — a minimal
+Vite app (live state table, serial panel, button/LED/UART controls).
+`npm install && npm run dev` and it's talking to the board.
 
 ## Usage
 
