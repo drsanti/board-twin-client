@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>board-twin starter</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; margin: 0; background: #0f1420; color: #dce4f0;
+           display: flex; justify-content: center; padding: 24px; }
+    main { width: min(920px, 100%); }
+    h1 { font-size: 1.2rem; }
+    .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: .8rem;
+             background: #5a2a2a; }
+    .badge.on { background: #1d5c38; }
+    section { background: #171d2b; border: 1px solid #2a3350; border-radius: 8px;
+              padding: 12px 16px; margin-top: 14px; }
+    h2 { font-size: .85rem; text-transform: uppercase; letter-spacing: .08em;
+         color: #8fa3c8; margin: 0 0 10px; }
+    table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+    td, th { text-align: left; padding: 3px 8px; font-size: .85rem; }
+    th { color: #8fa3c8; font-weight: 600; }
+    tr + tr td { border-top: 1px solid #232b42; }
+    button { background: #2a3552; color: #dce4f0; border: 1px solid #3a4a74; border-radius: 6px;
+             padding: 6px 12px; margin-right: 6px; cursor: pointer; font-size: .85rem; }
+    button:hover { background: #35446b; }
+    input { background: #0f1420; color: #dce4f0; border: 1px solid #3a4a74; border-radius: 6px;
+            padding: 6px 10px; width: 260px; font-size: .85rem; }
+    #serial { font-family: ui-monospace, monospace; font-size: .8rem; max-height: 160px;
+              overflow-y: auto; white-space: pre-wrap; }
+    #serial .tx { color: #7dd3a8; }
+    #serial .rx { color: #9db4dd; }
+    .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>board-twin starter <span id="status" class="badge">offline</span></h1>
+
+    <section>
+      <h2>Drive the board</h2>
+      <div class="row">
+        <button id="btn0">press btn0</button>
+        <button id="btn1">press btn1</button>
+        <button id="led0">toggle led0</button>
+        <button id="reset">reset board</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>UART — send a line to the sim</h2>
+      <div class="row">
+        <input id="uartText" placeholder="help" />
+        <button id="uartSend">send</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Live board state</h2>
+      <table>
+        <thead><tr><th>device</th><th>value</th></tr></thead>
+        <tbody id="state"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Serial</h2>
+      <div id="serial"></div>
+    </section>
+
+    <section>
+      <h2>Kernel stats</h2>
+      <div id="stats" class="row">—</div>
+    </section>
+  </main>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
