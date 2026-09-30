@@ -1,6 +1,6 @@
 {
   "name": "@ternion/board-twin-client",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Typed TypeScript client for the board-twin live-data broker (ws://127.0.0.1:7392)",
   "license": "MIT",
   "type": "module",
